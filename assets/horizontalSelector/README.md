@@ -9,7 +9,7 @@ horselect.start({
     position: "absolute"
 });
 ```
-
+:electric_plug:
 ### models
   Json with the options *Collection*, this support for default the semana fields: name, fecha_inicio and fecha_fin
 
@@ -17,7 +17,7 @@ horselect.start({
   This can be **absolute** or **relative** and affect the parent position div, this is require to the horizontal scroll take effect.
 
 
-## :electric_plug: channel
+## :radio: channel
 Get 2 inputs, to integrate with a external keyboard interface.
 
 ### select:next
