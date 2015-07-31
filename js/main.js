@@ -245,13 +245,13 @@ define([
         el: "#somediv"
     });
 
-    var horselect = new HorSelect("attrSelect");
+    var horselect = new HorSelect("horSelect");
     horselect.start({
         models: semanasCollection,
         position: "absolute"
     });
 
-    var horSelectChannel = Radio.channel("attrSelect");
+    var horSelectChannel = Radio.channel("horSelect");
     var horSelectView = horSelectChannel.request("get:root");
     somediv.show(horSelectView);
 });

@@ -52,6 +52,32 @@ define([
               var itemWidth = this.$el.find(".option:first-child").width();
               var totalWidth = totalItem * itemWidth;
               this.$el.width(totalWidth);
+            },
+            setVars: function(){
+              HorSelect.allOpt = this.$el.find(".option");
+              HorSelect.firstOpt = this.$el.find(".option:nth-child(1)");
+              HorSelect.lastOpt = this.$el.find(".option:last-child");
+              HorSelect.nextOpt = this.$el.find(".option.selected").next();
+              HorSelect.prevOpt = this.$el.find(".option.selected").prev();
+              HorSelect.ActualOpt = this.$el.find(".option.selected");
+            },
+            next: function(){
+              this.setVars();
+              if(HorSelect.allOpt.hasClass("selected")){
+                HorSelect.allOpt.removeClass("selected");
+                HorSelect.nextOpt.addClass("selected");
+              }else{
+                HorSelect.firstOpt.addClass("selected");
+              }
+            },
+            prev: function(){
+              this.setVars();
+              if(HorSelect.allOpt.hasClass("selected")){
+                HorSelect.allOpt.removeClass("selected");
+                HorSelect.prevOpt.addClass("selected");
+              }else{
+                HorSelect.lastOpt.addClass("selected");
+              }
             }
         });
 
@@ -62,6 +88,14 @@ define([
           HorSelect.Channel.reply("get:root", function(){
             return HorSelect.collectionview;
           });
+
+          // keyboard function
+          HorSelect.Channel.on("selected:next", function(){
+            HorSelect.collectionview.next();
+          })
+          HorSelect.Channel.on("selected:prev", function(){
+            HorSelect.collectionview.prev();
+          })
         });
 
         return HorSelect;
