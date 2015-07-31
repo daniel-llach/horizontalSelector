@@ -1,0 +1,113 @@
+//// setting custom class ////
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:normal;src:local('Open Sans'),local('OpenSans'),url('fonts/OpenSans-Regular.ttf') format('truetype')}@font-face{font-family:'Open Sans';font-weight:300;src:local('Open Sans'),local('OpenSans'),url('fonts/OpenSans-Light.ttf') format('truetype')}@font-face{font-family:'Open Sans';font-weight:700;src:local('Open Sans'),local('OpenSans'),url('fonts/OpenSans-Bold.ttf') format('truetype')}
+
+.border-radius(@radius: 10px)
+{
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+      -ms-border-radius: @radius;
+       -o-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.noSelectText
+{
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.shadow(@s: 3px 3px 4px #444) {
+    -moz-box-shadow: @s;
+    -webkit-box-shadow: @s;
+    box-shadow: @s;
+}
+
+.translate (@x: -50%, @y: -50%)
+{
+    -webkit-transform: translate( @x, @y );
+    -moz-transform: translate( @x, @y );
+    -o-transform: translate( @x, @y );
+    transform: translate( @x, @y );
+}
+
+.center
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  .translate(-50%, -50%);
+
+}
+
+.centerVertical
+{
+    position: absolute;
+    top: 50%;
+
+    .translate(0%, -50%);
+}
+
+.brillo(@br: 1.2)
+{
+    filter: brightness(@br);
+    // Browser Specific
+    -webkit-filter: brightness(@br);
+    -moz-filter: brightness(@br);
+    -o-filter: brightness(@br);
+    -ms-filter: brightness(@br);
+}
+
+.box-sizing
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.animate(@a: all .2s ease-in-out)
+{
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+
+//////// STYLE ///////
+
+.horSelect
+{
+  width: 100%;
+  height: 100%;
+  background-color: #fbfbfb;
+
+  > .option
+  {
+    position: relative;
+    height: 100%;
+    width: 50px;
+    background-color: #7899a9;
+    border-right: 1px solid #eff1f6;
+    color: #fff;
+    font-family: "Open Sans";
+    float: left;
+    font-size: 11px;
+    .noSelectText;
+
+    > span
+    {
+      cursor: default;
+      .center;
+      .noSelectText;
+    }
+  }
+
+  .selected
+  {
+    background-color: #286186;
+  }
+
+}

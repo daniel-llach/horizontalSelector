@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!-- horSelect -->
+        <link rel="stylesheet" type="text/css" href="assets/horizontalSelector/css/horSelect.css">
+        <!-- <link rel="stylesheet" type="text/css" href="assets/horizontalSelector/css/horSelect_responsive.css"> -->
+
+        <!--<script src="js/ie/modernizr.js"></script> --><!-- CSS3 old browser support -->
+        <!--[if lt IE 9]>
+        <script src="js/ie/selectivizr.js"></script>
+        <script src="js/ie/html5.js"></script>
+        <script src="js/ie/ie9.js"></script>
+        <![endif]-->
+        <style>
+          #somediv
+          {
+              width: 500px;
+              height: 45px;
+              position: absolute;
+              left: 50%;
+              top: 20%;
+              -webkit-transform: translate( -50%, -50% );
+              -moz-transform: translate( -50%, -50% );
+              -o-transform: translate( -50%, -50% );
+              transform: translate( -50%, -50% );
+          }
+        </style>
+    </head>
+    <body>
+        <div id="somediv"></div>
+        <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+    </body>
+</html>
