@@ -66,29 +66,29 @@ define([
               if(HorSelect.allOpt.hasClass("selected")){
                 HorSelect.allOpt.removeClass("selected");
                 HorSelect.nextOpt.addClass("selected");
-                this.updateScroll();
               }else{
                 HorSelect.firstOpt.addClass("selected");
               }
+              this.updateScroll();
             },
             prev: function(){
               this.setVars();
               if(HorSelect.allOpt.hasClass("selected")){
                 HorSelect.allOpt.removeClass("selected");
                 HorSelect.prevOpt.addClass("selected");
-                this.updateScroll();
               }else{
                 HorSelect.lastOpt.addClass("selected");
               }
+              this.updateScroll();
             },
-            updateScroll: function(direction){
-              var index = HorSelect.ActualOpt.index() + 1;
+            updateScroll: function(){
+              var index = this.$el.find(".option.selected").index() + 1;
               var widthElement = HorSelect.firstOpt.width();
               var marginLeft = widthElement * index;
               var container = HorSelect.firstOpt.parent().parent();
               var containerWidth = container.width();
 
-              container.animate({scrollLeft: marginLeft - widthElement * 2}, 800);
+              container.animate({scrollLeft: marginLeft - widthElement * 2}, 400);
             }
 
         });
