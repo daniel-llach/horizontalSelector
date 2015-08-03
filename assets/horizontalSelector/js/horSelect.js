@@ -43,8 +43,6 @@ define([
               this.collection.sort();
             },
             onShow: function(){
-              console.log("collection: ", this.collection);
-
               this.setContainer();
               this.setDimension();
 
