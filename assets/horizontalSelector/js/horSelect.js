@@ -37,9 +37,17 @@ define([
             tagName: "div",
             className: "horSelect",
             childView: HorSelect.ItemView,
+            reorderOnSort: true,
+            initialize: function(){
+              this.collection.comparator = 'fecha_inicio';
+              this.collection.sort();
+            },
             onShow: function(){
+              console.log("collection: ", this.collection);
+
               this.setContainer();
               this.setDimension();
+
             },
             setContainer: function(){
               this.$el.parent().css({
